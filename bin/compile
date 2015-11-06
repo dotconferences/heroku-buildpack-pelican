@@ -50,6 +50,7 @@ if [[ ! -d "$CACHE_DIR/$DISTRIBUTE_VERSION" ]]; then
   python setup.py install  # &> /dev/null
 fi
 
+puts-step "Ensure PIP"
 python -m ensurepip
 
 # if [[ ! -d "$CACHE_DIR/$PIP_VERSION" ]]; then
