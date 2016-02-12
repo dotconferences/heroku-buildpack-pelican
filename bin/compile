@@ -85,6 +85,7 @@ if test -d $CACHE_DIR/ruby/.gem; then
 else
   HOME=$BUILD_DIR gem install sass --user-install --no-rdoc --no-ri
 fi
+scss -v
 
 # cache ruby gems sass
 rm -rf $CACHE_DIR/ruby
