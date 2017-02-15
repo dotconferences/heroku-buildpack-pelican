@@ -77,8 +77,8 @@ fi
 
 # install sass
 puts-step "Installing Sass"
-export GEM_HOME=$BUILD_DIR/.gem/ruby/2.3.0
-export PATH="$GEM_HOME/bin:$BUILD_DIR/.gem/ruby/1.9.1/bin:$BUILD_DIR/.gem/ruby/2.2.0/bin:$BUILD_DIR/.gem/ruby/2.3.0/bin:$PATH"
+export GEM_HOME=$BUILD_DIR/.gem/ruby/2.4.0
+export PATH="$GEM_HOME/bin:$BUILD_DIR/.gem/ruby/1.9.1/bin:$BUILD_DIR/.gem/ruby/2.2.0/bin:$BUILD_DIR/.gem/ruby/2.3.0/bin:$BUILD_DIR/.gem/ruby/2.4.0/bin:$PATH"
 if test -d $CACHE_DIR/ruby/.gem; then
   cp -r $CACHE_DIR/ruby/.gem $BUILD_DIR
   HOME=$BUILD_DIR gem update sass --user-install --no-rdoc --no-ri
