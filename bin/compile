@@ -75,22 +75,6 @@ else
   pip install --use-mirrors Markdown | indent
 fi
 
-# install sass
-puts-step "Installing Sass"
-export GEM_HOME=$BUILD_DIR/.gem/ruby/2.4.0
-export PATH="$GEM_HOME/bin:$BUILD_DIR/.gem/ruby/1.9.1/bin:$BUILD_DIR/.gem/ruby/2.2.0/bin:$BUILD_DIR/.gem/ruby/2.3.0/bin:$BUILD_DIR/.gem/ruby/2.4.0/bin:$PATH"
-if test -d $CACHE_DIR/ruby/.gem; then
-  cp -r $CACHE_DIR/ruby/.gem $BUILD_DIR
-  HOME=$BUILD_DIR gem update sass --user-install --no-rdoc --no-ri
-else
-  HOME=$BUILD_DIR gem install sass --user-install --no-rdoc --no-ri
-fi
-scss -v
-
-# cache ruby gems sass
-rm -rf $CACHE_DIR/ruby
-mkdir -p $CACHE_DIR/ruby
-
 puts-step "Running pelican"
 
 if [[ -f publishconf.py ]]; then
